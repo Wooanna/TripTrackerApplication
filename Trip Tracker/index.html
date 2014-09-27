@@ -9,8 +9,14 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/everlive.all.min.js"></script>
 
+   
     <script src="scripts/app.js"></script>
+    <script src="Data/databaseInitialisation.js"></script>
+    <script src="Data/addContactController.js"></script>
+    <script src="Data/findContactController.js"></script>
+    
 
 </head>
 <body>
@@ -21,6 +27,32 @@
              <!--   <a href="views/home.html" data-icon="home">Home</a>  --> 
                 <a href="views/driverMode.html" data-icon="compose">Create</a>
                 <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
+               <a data-role="button" data-icon="details">
+                   Exit
+                </a>
+            </div>
+        </div>
+    </div>
+    
+     <div data-role="layout" data-id="create" >
+        <div data-role="footer">
+            <div data-role="tabstrip">
+             <a href="views/home.html" data-icon="home">Home</a> 
+              <!--  <a href="views/driverMode.html" data-icon="compose">Create</a> -->
+                <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
+               <a data-role="button" data-icon="details">
+                   Exit
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="layout" data-id="watch" >
+        <div data-role="footer">
+            <div data-role="tabstrip">
+             <a href="views/home.html" data-icon="home">Home</a> 
+               <a href="views/driverMode.html" data-icon="compose">Create</a>
+                <!-- <a href="views/watchMode.html" data-icon="mosviewed">Watch</a> -->
                <a data-role="button" data-icon="details">
                    Exit
                 </a>
