@@ -1,4 +1,4 @@
-<div data-role="view" data-layout="create" data-model="app.viewmodels.driverMode">
+<div data-role="view" data-layout="create" data-model="app.viewmodels.driverMode" id="drivermodecontainer">
     <h1 data-role="header" data-bind="text : title" class="h1"> </h1>
     <br />
      
@@ -48,15 +48,17 @@
             </li>
         </ul>
     </form>
-    <div data-role="navbar">
-         
-        <a href="views/peopleToWatch.html" 
+   
+        <div id='createbutton-container'>
+             <a href="views/peopleToWatch.html" 
            data-role="button" 
            data-bind="events: {click: getInfo}" 
            class="createButton"> Create   
         </a>
+    </div> 
+       
             
       
-    </div>
+
      
 </div>
