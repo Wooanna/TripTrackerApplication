@@ -356,3 +356,12 @@ body, html {
         background-size: 100%;
     }
 }
+
+#tabstrip-home .km-content{
+ 
+background-image: url('../Images/finalback.jpg');
+background-size: auto 100%;
+background-repeat: repeat;
+color : white;
+ 
+}
