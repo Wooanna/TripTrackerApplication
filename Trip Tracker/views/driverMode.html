@@ -3,20 +3,27 @@
     <br />
     <form>
         <label for="title">Trip Title</label>
-        <input type="text" id="title" required />
+        <input type="text" id="title"  required data-bind="value: tripTitle" />
         <br />
         <label for="from">From</label>
-        <input type="text" id="from" required />
+        <input type="text" id="from" required data-bind="value: from" />
         <br />
         <label for="to">To</label>
-        <input type="text" id="to" required />
+        <input type="text" id="to" required data-bind="value: to"/>
         <br />
         <label for="date">Date</label>
-        <input type="datetime" id="date" required />
+        <input type="date" id="date" required />
         <br />
         <label for="info">Trip Description</label>
-        <input type="text" id="info" />
+        <input type="text" id="info" data-bind="value: tripDescription"/>
         <br />
         
+      
     </form>
+    <div data-role="navbar">
+         <button class="createButton" data-role="button" data-bind="events: {click: getInfo}">
+            Create
+        </button>
+    </div>
+     
 </div>
