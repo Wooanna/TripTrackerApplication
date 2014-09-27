@@ -1,29 +1,62 @@
 <div data-role="view" data-layout="create" data-model="app.viewmodels.driverMode">
     <h1 data-role="header" data-bind="text : title" class="h1"> </h1>
     <br />
-    <form>
-        <label for="title">Trip Title</label>
-        <input type="text" id="title"  required data-bind="value: tripTitle" />
-        <br />
-        <label for="from">From</label>
-        <input type="text" id="from" required data-bind="value: from" />
-        <br />
-        <label for="to">To</label>
-        <input type="text" id="to" required data-bind="value: to"/>
-        <br />
-        <label for="date">Date</label>
-        <input type="date" id="date" required />
-        <br />
-        <label for="info">Trip Description</label>
-        <input type="text" id="info" data-bind="value: tripDescription"/>
-        <br />
-        
-      
+     
+    <form action="./index.html">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>Trip type
+                    <select>
+                        <option value="First Option">Bussiness</option>
+                        <option value="Second Option">Vacation</option>
+                        <option value="Third Option">Family visitation</option>
+                        <option value="Fourth Option">Event/wedding, universary/</option>
+                    </select>
+                </label>
+            </li>
+           
+          
+            <li>
+                <label>Title
+                    <input type="text" value="Trip title" id="title"  required data-bind="value: tripTitle" />
+                </label>
+            </li>
+            <li>
+                <label>From
+                    <input type="text" value="Traveling from"  id="from" required data-bind="value: from"  />
+                </label>
+            </li>
+           <li>
+                <label>To
+                    <input type="text" value="Traveling to" id="to" required data-bind="value: to"/>
+                </label>
+            </li>
+            
+            <li>
+                <label>
+                    Type date
+                    <input type="date" value="2012-03-22" id="info" data-bind="value: tripDescription"/>
+                </label>
+            </li>
+           
+                     
+            <li>
+                <label>
+                    Description
+                    <textarea style="resize: none">Describe your trip</textarea>
+                </label>
+            </li>
+        </ul>
     </form>
     <div data-role="navbar">
-         <button class="createButton" data-role="button" data-bind="events: {click: getInfo}">
-            Create
-        </button>
+         
+        <a href="views/peopleToWatch.html" 
+           data-role="button" 
+           data-bind="events: {click: getInfo}" 
+           class="createButton"> Create   
+        </a>
+            
+      
     </div>
      
 </div>
