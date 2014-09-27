@@ -366,6 +366,24 @@ color : white;
  
 }
 
+#drivermodecontainer .km-content{
+ 
+background-image: url('../Images/back1.jpg');
+background-size: 100% 100%;
+background-repeat: no repeat;
+color : white;
+    
+ 
+}
+#createbutton-container
+{
+     <a href="views/peopleToWatch.html" 
+           data-role="button" 
+           data-bind="events: {click: getInfo}" 
+           class="createButton"> Create   
+        </a>
+}
+
 .h1
 {
     font-size: 18px;
@@ -377,6 +395,7 @@ color : white;
 {
     width : 150px;
     height: 75px;
+    opacity: 0.7;
    
 
 
