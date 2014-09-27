@@ -1,3 +1,22 @@
 <div data-role="view" data-layout="main">
-    
+    <div data-role="navbar">Create new trip</div>
+    <br />
+    <form>
+        <label for="title">Trip Title</label>
+        <input type="text" id="title" required />
+        <br />
+        <label for="from">From</label>
+        <input type="text" id="from" required />
+        <br />
+        <label for="to">To</label>
+        <input type="text" id="to" required />
+        <br />
+        <label for="date">Date</label>
+        <input type="datetime" id="date" required />
+        <br />
+        <label for="info">Trip Description</label>
+        <input type="text" id="info" />
+        <br />
+     <input type="button" onclick="window.location.href = 'views/peopleToWatch.html'" value="Next" />
+    </form>
 </div>
