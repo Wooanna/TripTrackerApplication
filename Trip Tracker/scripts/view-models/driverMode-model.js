@@ -8,16 +8,18 @@ app.viewmodels = app.viewmodels || {};
         from: '',
         to: '',
         tripDescription: '',
+        date: '',
+        tripType: '',
+
         getInfo: function () {
-            // console.log(this.get('tripTitle'));
-            //  console.log(this.get('from'));
-            //  console.log(this.get('to'));
-            //  console.log(this.get('tripDescription'));
+           console.log(this.get('date'))
             var observableObject = new kendo.data.ObservableObject({
                 'TripTitle': this.get('tripTitle'),
                 'From' : this.get('from'),
                 'To': this.get('to'),
                 'Content' : this.get('tripDescription'),
+                'Date' : new Date(this.get('date')),
+                'TripType' : this.get('tripType'),
                 
             });
              var applicationSettings = {

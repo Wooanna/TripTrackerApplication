@@ -6,11 +6,11 @@
         <ul data-role="listview" data-style="inset">
             <li>
                 <label>Trip type
-                    <select>
-                        <option value="First Option">Bussiness</option>
-                        <option value="Second Option">Vacation</option>
-                        <option value="Third Option">Family visitation</option>
-                        <option value="Fourth Option">Event/wedding, universary/</option>
+                    <select id='tripType' data-bind="value: tripType">
+                        <option value="Bussiness">Bussiness</option>
+                        <option value="Vacation">Vacation</option>
+                        <option value="Family visitation">Family visitation</option>
+                        <option value="Event/wedding, universary/">Event/wedding, universary/</option>
                     </select>
                 </label>
             </li>
@@ -35,7 +35,7 @@
             <li>
                 <label>
                     Type date
-                    <input type="date" value="2012-03-22" id="info" data-bind="value: tripDescription"/>
+                    <input type="date" value="2012-03-22" id="date" data-bind="value: date"/>
                 </label>
             </li>
            
@@ -43,7 +43,7 @@
             <li>
                 <label>
                     Description
-                    <textarea style="resize: none">Describe your trip</textarea>
+                    <textarea style="resize: none" id="description" data-bind="value: tripDescription">Describe your trip</textarea>
                 </label>
             </li>
         </ul>
