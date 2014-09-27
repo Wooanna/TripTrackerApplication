@@ -360,8 +360,15 @@ body, html {
 #tabstrip-home .km-content{
  
 background-image: url('../Images/finalback.jpg');
-background-size: auto 100%;
-background-repeat: repeat;
+background-size: 100% 100%;
+background-repeat: no repeat;
 color : white;
  
+}
+
+.h1
+{
+    font-size: 18px;
+    text-align: center;
+    color: green;
 }
