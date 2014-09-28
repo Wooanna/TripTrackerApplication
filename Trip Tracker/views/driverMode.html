@@ -1,7 +1,6 @@
 <div data-role="view" data-layout="create" data-model="app.viewmodels.driverMode" id="drivermodecontainer">
     <h1 data-role="header" data-bind="text : title" class="h1"> </h1>
     <br />
-
     <form action="./index.html">
         <ul data-role="listview" data-style="inset">
             <li>
@@ -15,8 +14,6 @@
                     </select>
                 </label>
             </li>
-
-
             <li>
                 <label>
                     Title
@@ -35,15 +32,23 @@
                     <input type="text" value="Traveling to" id="to" required data-bind="value: to" class="driverInputs" />
                 </label>
             </li>
-
             <li>
                 <label>
                     Type date
                     <input type="date" value="2012-03-22" id="date" data-bind="value: date" class="driverInputs" />
                 </label>
             </li>
-
-
+            <li>
+                <label>
+                   Free places
+                    <select id='freePlaces' data-bind="value: freePlaces" class="freePlaces">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+            </li>
             <li>
                 <label>
                     Description
@@ -52,30 +57,14 @@
             </li>
         </ul>
     </form>
-
     <div id='imageButton-container'>
-        <a href="views/driverMode.html"
-           data-role="button"
-           data-bind="events: {click: addImage}"
-           class="createButton"
-           id="addTripImage">
+        <a href="views/driverMode.html" data-role="button" data-bind="events: {click: addImage}" class="createButton" id="addTripImage">
             Add Trip Image
         </a>
     </div>
-    
     <div id='createbutton-container'>
-        <a href="views/invitePeople.html"
-           data-role="button"
-           data-bind="events: {click: getInfo}"
-           class="createButton"
-           id="createList">
+        <a href="views/invitePeople.html" data-role="button" data-bind="events: {click: getInfo}" class="createButton" id="createList">
             Create
         </a>
     </div>
-
-
-
-
-
-
 </div>

@@ -22,18 +22,21 @@ app.viewmodels = app.viewmodels || {};
         tripType: '',
         tripImage: '',
         tripId: '3',
+        freePlaces: 0,
 
         getInfo: function () {       
-           
+              
             var observableObject = new kendo.data.ObservableObject({
                 'TripTitle': this.get('tripTitle'),
                 'From': this.get('from'),
                 'To': this.get('to'),
                 'Content': this.get('tripDescription'),
-                'Date': new Date(this.get('date')),
+                'Date': this.get('date'),
                 'TripType': this.get('tripType'),
-                'TripImage': this.get('tripImage')
+                'TripImage': this.get('tripImage'),
+                'FreePlaces': this.get('freePlaces')
             });
+           
 
             var data = el.data('Trip');
              

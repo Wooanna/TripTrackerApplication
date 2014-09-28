@@ -399,7 +399,7 @@ color : white;
 
 }
 input#title.driverInputs, select#tripType.driverInputs, input#to.driverInputs, input#date.driverInputs,
- input#from.driverInputs,input#description.driverInputs,#description
+ input#from.driverInputs,input#description.driverInputs,#description, #freePlaces
 
 {
     background:rgba(239, 148, 22, 0.43);
@@ -434,5 +434,5 @@ label{
 }
 
      #imageButton-container, #createbutton-container{
-      
+       display: inline;
      }
