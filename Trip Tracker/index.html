@@ -70,10 +70,10 @@
     </div>
     
     <script type="kendo-x-template-template-x-kendo" id="contacts-template">
-   <li class="click">
-        <input type="checkbox" class="click" />
-        <span class="checkbox" data-bind="text: displayName"></span>
-    </li> 
+       
+         <li><label data-bind="text: displayName" ></label> <input type="checkbox" data-bind="value: isChecked"/></li>
+  
+          
       
     </script>
 </body>

@@ -21,9 +21,10 @@ app.viewmodels = app.viewmodels || {};
         date: '',
         tripType: '',
         tripImage: '',
+        tripId: '3',
 
         getInfo: function () {       
-            console.log(this.get('date'))
+           
             var observableObject = new kendo.data.ObservableObject({
                 'TripTitle': this.get('tripTitle'),
                 'From': this.get('from'),
@@ -35,14 +36,18 @@ app.viewmodels = app.viewmodels || {};
             });
 
             var data = el.data('Trip');
-
-            data.create(observableObject,
-                function (data) {
-                    alert(JSON.stringify(data));
-                },
-                function (error) {
+             
+            data.create(observableObject, onSuccess, onError);
+            
+               function onSuccess (data) {
+                 //   alert(JSON.stringify(data));
+                scope.driverMode.tripId = data.result.Id;
+                 // console.log(scope.driverMode.tripId);       
+                };
+            
+            function onError(error) {
                     alert(JSON.stringify(error));
-                });
+                };
         },
 
         addImage: function () {
@@ -67,7 +72,7 @@ app.viewmodels = app.viewmodels || {};
             };
             navigator.camera.getPicture(success, error, config);
         }
-
+      
         //
 
 
@@ -87,5 +92,9 @@ app.viewmodels = app.viewmodels || {};
         //
         //
     });
+    
+      
+       
+
 
 }(app.viewmodels));
