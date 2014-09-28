@@ -12,9 +12,11 @@
     <script src="kendo/js/everlive.all.min.js"></script>
     <script src="scripts/app.js"></script>
    
-    <script src="scripts/view-models/driverMode-model.js"></script>
+    <script src="scripts/view-models/loadContacts.js"></script>
+      <script src="scripts/view-models/driverMode-model.js"></script>
     <script src="scripts/view-models/watchMode-model.js"></script>
      <script src="scripts/view-models/invitePeople-model.js"></script>
+   
 </head>
 
 <body>
@@ -68,10 +70,11 @@
     </div>
     
     <script type="kendo-x-template-template-x-kendo" id="contacts-template">
-    <div class="click">
+   <li class="click">
         <input type="checkbox" class="click" />
-        <span class="checkbox">#:displayName#</span>
-    </div>
+        <span class="checkbox" data-bind="text: displayName"></span>
+    </li> 
+      
     </script>
 </body>
 

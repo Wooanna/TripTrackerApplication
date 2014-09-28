@@ -1,31 +1,39 @@
 var app = app || {};
+
 app.viewmodels = app.viewmodels || {};
 
 (function (scope) {
-    scope.invitePeopleMode = kendo.observable({
-        title: 'Invite people to watch your trip',
-        contactList: [],
-        invite: function () {
+    function show(e) {
+        var options = new ContactFindOptions();
 
-            var options = new ContactFindOptions();
+        options.multiple = true;
+        
+        function onSuccess(contacts) {
             
-            options.multiple = true;
+            alert('Found ' + contacts.length + ' contacts.');
+            
+            var model = {
+                title: 'Invite people to watch your trip',
+                contactList: contacts                         
+            };
+            var vm = kendo.observable(model);
+        
+            kendo.bind(e.view.element, vm);
+        };
 
-            var fields = [navigator.contacts.fieldType.id, navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-            navigator.contacts.find(fields, onSuccess, onError, options);
-        }
+        function onError(contactError) {
+            alert('Error: ' + JSON.stringify(contactError));
+        };
 
-    });
-
-    //Extract all contacts
-    function onSuccess(contacts) {
-        alert('Found ' + contacts.length + ' contacts.');
-        scope.invitePeopleMode.contactList = contacts;
+        var fields = [
+            navigator.contacts.fieldType.id, 
+            navigator.contacts.fieldType.displayName, 
+            navigator.contacts.fieldType.name
+        ];
+            
+        navigator.contacts.find(fields, onSuccess, onError, options);
+    }
+    scope.invitePeopleModeShow = {
+        show: show
     };
-
-
-    function onError(contactError) {
-        alert('Error: ' + JSON.stringify(contactError));
-    };
-
 }(app.viewmodels));

@@ -1,16 +1,24 @@
-<div data-role="view" data-layout="peopleToWatch" data-model="app.viewmodels.invitePeopleMode">
+<div data-role="view" data-layout="peopleToWatch"  data-show="app.viewmodels.invitePeopleModeShow.show">
     <h1 data-role="header" data-bind="text:title" class="h1">
            </h1>
    
-    <div data-role="button" data-align="right">
-        DONE
-    </div>
+    
+    
     <div style="width:250px;height:350px;overflow-y:scroll;">
         <div>
             <input type="checkbox" id="checkall" class="click" />
             <span class="checkbox">All</span>
         </div>
-        <div id="listView" class="k-listview" data-bind="source: contactList" data-template="contacts-template">
-        </div>
+        <ul id="listView" class="k-listview" data-template="contacts-template"  data-bind="source: contactList" >
+            
+        </ul>
     </div>
+    
+   
 </div>
+
+<script>
+
+</script>
+
+

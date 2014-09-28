@@ -10,6 +10,10 @@ app.viewmodels = app.viewmodels || {};
         tripDescription: '',
         date: '',
         tripType: '',
+        
+               
+      
+        
 
         getInfo: function () {
            console.log(this.get('date'))
