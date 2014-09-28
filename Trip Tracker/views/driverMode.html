@@ -1,12 +1,13 @@
 <div data-role="view" data-layout="create" data-model="app.viewmodels.driverMode" id="drivermodecontainer">
     <h1 data-role="header" data-bind="text : title" class="h1"> </h1>
     <br />
-     
+
     <form action="./index.html">
         <ul data-role="listview" data-style="inset">
             <li>
-                <label>Trip type
-                    <select id='tripType' data-bind="value: tripType">
+                <label>
+                    Trip type
+                    <select id='tripType' data-bind="value: tripType" class="driverInputs">
                         <option value="Bussiness">Bussiness</option>
                         <option value="Vacation">Vacation</option>
                         <option value="Family visitation">Family visitation</option>
@@ -14,32 +15,35 @@
                     </select>
                 </label>
             </li>
-           
-          
+
+
             <li>
-                <label>Title
-                    <input type="text" value="Trip title" id="title"  required data-bind="value: tripTitle" />
+                <label>
+                    Title
+                    <input type="text" value="Trip title" id="title" required data-bind="value: tripTitle" class="driverInputs" />
                 </label>
             </li>
             <li>
-                <label>From
-                    <input type="text" value="Traveling from"  id="from" required data-bind="value: from"  />
+                <label>
+                    From
+                    <input type="text" value="Traveling from" id="from" required data-bind="value: from" class="driverInputs" />
                 </label>
             </li>
-           <li>
-                <label>To
-                    <input type="text" value="Traveling to" id="to" required data-bind="value: to"/>
+            <li>
+                <label>
+                    To
+                    <input type="text" value="Traveling to" id="to" required data-bind="value: to" class="driverInputs" />
                 </label>
             </li>
-            
+
             <li>
                 <label>
                     Type date
-                    <input type="date" value="2012-03-22" id="date" data-bind="value: date"/>
+                    <input type="date" value="2012-03-22" id="date" data-bind="value: date" class="driverInputs" />
                 </label>
             </li>
-           
-                     
+
+
             <li>
                 <label>
                     Description
@@ -48,25 +52,29 @@
             </li>
         </ul>
     </form>
-   <div id='imageButton-container'>
+
+    <div id='imageButton-container'>
         <a href="views/driverMode.html"
            data-role="button"
            data-bind="events: {click: addImage}"
-           class="createButton">
+           class="createButton"
+           id="addTripImage">
             Add Trip Image
         </a>
-    </div> 
-        <div id='createbutton-container'>
-             <a href="views/invitePeople.html" 
-           data-role="button" 
-           data-bind="events: {click: getInfo}" 
-           class="createButton"> Create   
+    </div>
+    <div id='createbutton-container'>
+        <a href="views/invitePeople.html"
+           data-role="button"
+           data-bind="events: {click: getInfo}"
+           class="createButton"
+           id="createList">
+            Create
         </a>
-    </div> 
-      
-       
-            
-      
+    </div>
 
-     
+
+
+
+
+
 </div>

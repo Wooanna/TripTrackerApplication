@@ -55,6 +55,7 @@ app.viewmodels = app.viewmodels || {};
              
                 el.Files.create(picture);
                 scope.driverMode.tripImage = picture.Filename;
+                 alert('The trip image successfully added.');
             };
             var error = function () {
                 navigator.notification.alert("Unfortunately we could not add the image");
