@@ -1,5 +1,4 @@
 var app = app || {};
-
 app.viewmodels = app.viewmodels || {};
 
 (function (scope) {
@@ -9,13 +8,11 @@ app.viewmodels = app.viewmodels || {};
         options.multiple = true;
         
         function onSuccess(contacts) {
-            
-            alert('Found ' + contacts.length + ' contacts.');
-            
+                                  
             var model = {
                 title: 'Invite people to watch your trip',
-                contactList: contacts                         
-            };
+                contactList: contacts,
+               };
             var vm = kendo.observable(model);
         
             kendo.bind(e.view.element, vm);
@@ -36,4 +33,6 @@ app.viewmodels = app.viewmodels || {};
     scope.invitePeopleModeShow = {
         show: show
     };
+      
+   
 }(app.viewmodels));
