@@ -21,7 +21,6 @@ app.viewmodels = app.viewmodels || {};
                 tripId: '',
                 freePlaces: 0,
                
-
               getInfo: function () {
                     if (this.get('tripTitle') == '' || this.get('from') == '' || this.get('to') == '' || this.get('date') == ''){
                         alert("Fields for Trip title, From, To and Date are required!");
@@ -43,13 +42,7 @@ app.viewmodels = app.viewmodels || {};
                             var networkState = navigator.connection.type;
 
                             var states = {};
-                            states[Connection.UNKNOWN] = 'Unknown connection';
-                            states[Connection.ETHERNET] = 'Ethernet connection';
-                            states[Connection.WIFI] = 'WiFi connection';
-                            states[Connection.CELL_2G] = 'Cell 2G connection';
-                            states[Connection.CELL_3G] = 'Cell 3G connection';
-                            states[Connection.CELL_4G] = 'Cell 4G connection';
-                            states[Connection.CELL] = 'Cell generic connection';
+                          
                             states[Connection.NONE] = 'No network connection';
                             if (states[networkState] == 'No network connection') {
                                 alert('Please check your device connection and try again.');
@@ -90,6 +83,7 @@ app.viewmodels = app.viewmodels || {};
                                
                             });
                             scope.driverMode.tripImage = picture.Filename;
+                            navigator.vibrate();
                             alert('The trip image successfully added.');
                         };
                         var error = function () {
@@ -103,28 +97,6 @@ app.viewmodels = app.viewmodels || {};
                         navigator.camera.getPicture(success, error, config);
                     }
 
-                    //
-
-
-                    //TODO
-                    //function loadPhotos() {
-                    //    everlive.Files.get().then(function (data) {
-                    //        var files = [];
-                    //        data.result.forEach(function (image) {
-                    //            files.push(image.Uri);
-                    //        });
-                    //        $("#images").kendoMobileListView({
-                    //            dataSource: files,
-                    //            template: "<img src='#: data #'>"
-                    //        });
-                    //    });
-                    //}
-                    //
-                    //
                 });
-
-
-
-
 
         }(app.viewmodels));
