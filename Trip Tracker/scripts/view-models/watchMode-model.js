@@ -15,7 +15,7 @@ app.viewmodels = app.viewmodels || {};
 
                 var applicationSettings = {
                     apiKey: 'DW6AEjXKXlIKroMU'
-                };
+                }; 
                 var el = new Everlive({
                     apiKey: applicationSettings.apiKey
                 });
@@ -59,7 +59,7 @@ app.viewmodels = app.viewmodels || {};
                         for (var subscribedName in subscribedForCurrentTrip) {
                             if (subscribedForCurrentTrip[subscribedName] == userName) {
                                 tripsForCurrentUser.push( window.allTrips[trip]);
-                               
+                              
                             }
                         }
                     }
@@ -67,7 +67,7 @@ app.viewmodels = app.viewmodels || {};
             }
 
         }
-
+       
     }
 
     scope.watchMode = {
