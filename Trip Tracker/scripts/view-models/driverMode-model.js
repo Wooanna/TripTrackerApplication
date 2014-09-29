@@ -22,49 +22,54 @@ app.viewmodels = app.viewmodels || {};
                 freePlaces: 0,
                
 
-                getInfo: function () {
-
-                    var observableObject = new kendo.data.ObservableObject({
-                        'TripTitle': this.get('tripTitle'),
-                        'From': this.get('from'),
-                        'To': this.get('to'),
-                        'Content': this.get('tripDescription'),
-                        'Date': this.get('date'),
-                        'TripType': this.get('tripType'),
-                        'TripImage': this.get('tripImage'),
-                        'FreePlaces': this.get('freePlaces')
-                    });
-
-                    function checkConnection() {
-                        var networkState = navigator.connection.type;
-
-                        var states = {};
-                        states[Connection.UNKNOWN] = 'Unknown connection';
-                        states[Connection.ETHERNET] = 'Ethernet connection';
-                        states[Connection.WIFI] = 'WiFi connection';
-                        states[Connection.CELL_2G] = 'Cell 2G connection';
-                        states[Connection.CELL_3G] = 'Cell 3G connection';
-                        states[Connection.CELL_4G] = 'Cell 4G connection';
-                        states[Connection.CELL] = 'Cell generic connection';
-                        states[Connection.NONE] = 'No network connection';
-                        if (states[networkState] == 'No network connection') {
-                            alert('Please check your device connection and try again.');
-                        } else {
-
-                            var data = el.data('Trip');
-                            data.create(observableObject, onSuccess, onError);
-
-                            function onSuccess(data) {
-                                scope.driverMode.tripId = data.result.Id;
-                            };
-
-                            function onError(error) {
-                                alert(JSON.stringify(error));
-                            };
-                        }
+              getInfo: function () {
+                    if (this.get('tripTitle') == '' || this.get('from') == '' || this.get('to') == '' || this.get('date') == ''){
+                        alert("Fields for Trip title, From, To and Date are required!");
+                        
                     }
+                    else {
+                        var observableObject = new kendo.data.ObservableObject({
+                            'TripTitle': this.get('tripTitle'),
+                            'From': this.get('from'),
+                            'To': this.get('to'),
+                            'Content': this.get('tripDescription'),
+                            'Date': this.get('date'),
+                            'TripType': this.get('tripType'),
+                            'TripImage': this.get('tripImage'),
+                            'FreePlaces': this.get('freePlaces')
+                        });
+
+                        function checkConnection() {
+                            var networkState = navigator.connection.type;
+
+                            var states = {};
+                            states[Connection.UNKNOWN] = 'Unknown connection';
+                            states[Connection.ETHERNET] = 'Ethernet connection';
+                            states[Connection.WIFI] = 'WiFi connection';
+                            states[Connection.CELL_2G] = 'Cell 2G connection';
+                            states[Connection.CELL_3G] = 'Cell 3G connection';
+                            states[Connection.CELL_4G] = 'Cell 4G connection';
+                            states[Connection.CELL] = 'Cell generic connection';
+                            states[Connection.NONE] = 'No network connection';
+                            if (states[networkState] == 'No network connection') {
+                                alert('Please check your device connection and try again.');
+                            } else {
+
+                                var data = el.data('Trip');
+                                data.create(observableObject, onSuccess, onError);
+
+                                function onSuccess(data) {
+                                    scope.driverMode.tripId = data.result.Id;
+                                };
+
+                                function onError(error) {
+                                    alert(JSON.stringify(error));
+                                };
+                            }
+                        }
                         checkConnection();
-                    },
+                    }
+                },
 
                     addImage: function () {
                         var success = function (data) {
