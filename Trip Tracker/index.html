@@ -11,48 +11,48 @@
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="kendo/js/everlive.all.min.js"></script>
     <script src="scripts/app.js"></script>
-   
-   
-      <script src="scripts/view-models/driverMode-model.js"></script>
+
+
+    <script src="scripts/view-models/driverMode-model.js"></script>
     <script src="scripts/view-models/watchMode-model.js"></script>
-     <script src="scripts/view-models/invitePeople-model.js"></script>
-   
+    <script src="scripts/view-models/invitePeople-model.js"></script>
+
 </head>
 
 <body>
     <div data-role="layout" data-id="main">
         <div data-role="footer">
             <div data-role="tabstrip">
-               
+
                 <a href="views/driverMode.html" data-icon="compose">Create</a>
                 <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
                 <a data-role="button" data-icon="details">
-                   Exit
+                    Exit
                 </a>
             </div>
         </div>
     </div>
     <div data-role="layout" data-id="create">
-        
+
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-icon="home">Home</a> 
-               
+                <a href="views/home.html" data-icon="home">Home</a>
+
                 <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
                 <button data-role="backbutton" data-icon="reply">Back</button>
-           
+
                 <a data-role="button" data-icon="details">Exit</a>
             </div>
         </div>
     </div>
     <div data-role="layout" data-id="peopleToWatch">
-       
+
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-icon="home">Home</a> 
-                               <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
+                <a href="views/home.html" data-icon="home">Home</a>
+                <a href="views/watchMode.html" data-icon="mosviewed">Watch</a>
                 <button data-role="backbutton" data-icon="reply">Back</button>
-              
+
                 <a data-role="button" data-icon="details">Exit</a>
             </div>
         </div>
@@ -60,22 +60,37 @@
     <div data-role="layout" data-id="watch">
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-icon="home">Home</a> 
+                <a href="views/home.html" data-icon="home">Home</a>
                 <a href="views/driverMode.html" data-icon="compose">Create</a>
-                               <a data-role="button" data-icon="details">
-                   Exit
+                <a data-role="button" data-icon="details">
+                    Exit
                 </a>
             </div>
         </div>
     </div>
-    
+
     <script type="kendo-x-template-template-x-kendo" id="contacts-template">
-       
-         <li><label data-bind="text: displayName" for="#: displayName#"></label> <input type="checkbox" id="#: displayName#" /></li>
-  
-          
-      
+        <li><label data-bind="text: displayName" for="#: displayName#"></label> <input type="checkbox" id="#: displayName#" /></li>
     </script>
+
+    <script type="kendo-x-template-forTrips-x-template" id="listOfTrips-template">
+        <li><a href="views/SingleTrip.html">#: TripTitle#</a> </li>
+        <!--tripTitle-->
+    </script>
+    
+    <script type="kendo-x-template-forSingleTrip-x-template" id="singleTrip-template">
+        <div id="singleTrip-container">
+            <h2><strong>#: TripTitle#</strong></h2>
+            <span>From: #: From# - #: To#</span>
+            <span>#: Date#</span>
+            <p>#: Content#</p>
+        </div>
+    </script>
+
+    <!--<script type="kenfo-x-template-tripImage-x-template" id="singleTripPicture-template">
+
+    </script>-->
+
 
 </body>
 
