@@ -18,7 +18,7 @@ app.viewmodels = app.viewmodels || {};
                 date: '',
                 tripType: '',
                 tripImage: '',
-                tripId: '3',
+                tripId: '',
                 freePlaces: 0,
 
                 getInfo: function () {
