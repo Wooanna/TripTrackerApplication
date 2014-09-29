@@ -34,6 +34,8 @@ app.viewmodels = app.viewmodels || {};
         navigator.contacts.find(fields, onSuccess, onError, options);
     }
 
+
+
     function doneAdding(e) {
         var $inputs = $('input[type=checkbox]:checked');
         var peopleToAdd = [];
@@ -53,8 +55,8 @@ app.viewmodels = app.viewmodels || {};
 
         var data = el.data('Trip');
         
+        console.log(app.viewmodels.driverMode.TripId);
         data.updateSingle({ Id: app.viewmodels.driverMode.tripId, 'SubscribedNames': peopleToAdd },
-                          
      function (data) {
          alert(JSON.stringify(data));
      },
@@ -70,6 +72,7 @@ app.viewmodels = app.viewmodels || {};
             alert(JSON.stringify(error));
         };
 
+        console.log(peopleToAdd);
     }
 
 
