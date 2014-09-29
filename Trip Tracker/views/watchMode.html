@@ -1,4 +1,12 @@
 <div data-role="view" data-layout="watch" data-title="Watch" data-show="app.viewmodels.watchMode.getTrips">
     <h1 data-role="header" data-bind="text: title" class="h1"></h1>
-    <div id="y"></div>
+    <div id="authorize-div">
+        <label for="userDisplayName">Enter your display name here:</label>
+        <input type="text" id="userDisplayName" />
+        <div id='showTripsbutton-container'>
+            <a href="views/tripsToWatch.html" data-role="button" data-bind="events: {click: showTrips}" class="createButton" id="showTripsButton">
+                Show Trips
+            </a>
+        </div>
+    </div>
 </div>
