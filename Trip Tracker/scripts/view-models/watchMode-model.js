@@ -40,7 +40,6 @@ app.viewmodels = app.viewmodels || {};
         }
 
         checkConnection();
-
     }
 
     function showTrips() {
@@ -59,8 +58,8 @@ app.viewmodels = app.viewmodels || {};
 
                         for (var subscribedName in subscribedForCurrentTrip) {
                             if (subscribedForCurrentTrip[subscribedName] == userName) {
-                                tripsForCurrentUser.push( window.allTrips[trip]);
-                               
+                                tripsForCurrentUser.push(window.allTrips[trip]);
+
                             }
                         }
                     }
@@ -90,9 +89,9 @@ app.viewmodels = app.viewmodels || {};
                             dataSource: chosenAsArray,
                             template: '<li><h2><strong>#: data.TripTitle#</strong></h2>   <br /><span><strong>From: </strong> #: data.From# - <strong>To: </strong> #: data.To#</span>  <br /> <span><strong>Date: </strong>: #: data.Date#</span>   <br /> <p><strong>Description: </strong>   <br /> #: data.Content#</p></li>'
                         });
-                        console.log('fgdfgdf');
-                        console.log(chosenTrip);
+
                         loadPhotos();
+
                         function loadPhotos() {
                             var applicationSettings = {
                                 apiKey: 'DW6AEjXKXlIKroMU'
@@ -101,26 +100,22 @@ app.viewmodels = app.viewmodels || {};
                                 apiKey: applicationSettings.apiKey
                             });
 
-                               el.Files.get().then(function (data) {
-                                   for(var image in data.result)
-                                       {
-                                            //console.log(data.result[image]);
-                                           if(data.result[image].Filename == chosenTrip.TripImage)
-                                           {
-                                              console.log('img found')
-                                               $('#tripImage').attr('src', data.result[image].Uri);
-                                               console.log(data.result[image].Uri)
-                                           }
-                                       }
-                               });
-                           }
-                       
+                            el.Files.get().then(function (data) {
+                                for (var image in data.result) {
+                                    //console.log(data.result[image]);
+                                    if (data.result[image].Filename == chosenTrip.TripImage) {
+                                        console.log('img found')
+                                        $('#tripImage').attr('src', data.result[image].Uri);
+                                        console.log(data.result[image].Uri)
+                                    }
+                                }
+                            });
+                        }
                     }
                 }
             }
-
         });
-                       
+
     }
     scope.watchMode = {
         getTrips: getTrips,
