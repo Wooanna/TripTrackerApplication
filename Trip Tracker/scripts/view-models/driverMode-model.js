@@ -20,6 +20,7 @@ app.viewmodels = app.viewmodels || {};
                 tripImage: '',
                 tripId: '',
                 freePlaces: 0,
+               
 
                 getInfo: function () {
 
@@ -73,7 +74,16 @@ app.viewmodels = app.viewmodels || {};
                                 base64: data
                             };
 
-                            el.Files.create(picture);
+                            el.Files.create(picture).then(function (picture) {
+                                var idPic = picture.result.Id;
+                                var namePic = picture.result.Filename;
+
+                                window.pictureIdName.push({
+                                    filename: namePic,
+                                    id: idPic
+                                });
+                               
+                            });
                             scope.driverMode.tripImage = picture.Filename;
                             alert('The trip image successfully added.');
                         };

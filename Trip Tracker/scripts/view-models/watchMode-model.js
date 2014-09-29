@@ -47,6 +47,7 @@ app.viewmodels = app.viewmodels || {};
         var tripsForCurrentUser = [];
 
         var userName = $('#userDisplayName').val();
+        console.log(userName);
         if (userName == '' || userName == null) {
             alert('Your name must be more than 0 symbols.');
         } else {
@@ -68,11 +69,62 @@ app.viewmodels = app.viewmodels || {};
 
         }
 
-    }
+        $('#tripsByTheUser').kendoMobileListView({
+            dataSource: tripsForCurrentUser,
+            template: '<li><div  class="chosenTrips" >#: data.TripTitle#</div> </li>'
+        });
 
+        $('div.chosenTrips').click(function () {
+            var title = $(this).text();
+            $(this).css('color', 'blue');
+            console.log(title);
+
+            for (var trip in tripsForCurrentUser) {
+                for (var prop in tripsForCurrentUser[trip]) {
+                    if (tripsForCurrentUser[trip][prop] == title) {
+                        var chosenTrip = tripsForCurrentUser[trip];
+                        var chosenAsArray = [];
+                        chosenAsArray.push(chosenTrip);
+
+                        $('#singleTripContainer').kendoMobileListView({
+                            dataSource: chosenAsArray,
+                            template: '<li><h2><strong>#: data.TripTitle#</strong></h2>   <br /><span><strong>From: </strong> #: data.From# - <strong>To: </strong> #: data.To#</span>  <br /> <span><strong>Date: </strong>: #: data.Date#</span>   <br /> <p><strong>Description: </strong>   <br /> #: data.Content#</p></li>'
+                        });
+                      
+                        function loadPhotos() {
+                            var applicationSettings = {
+                                apiKey: 'DW6AEjXKXlIKroMU'
+                            };
+                            var el = new Everlive({
+                                apiKey: applicationSettings.apiKey
+                            });
+
+                               el.Files.get().then(function (data) {
+                                   var files = [];
+                                   data.result.forEach(function (image) {
+                                       if(image.Filename == chosenTrip.TripImage)
+                                       {
+                                           files.push(image.Uri);
+                                       }
+                                      
+                                   });
+                                   $("#imageContainer").kendoMobileListView({
+                                       dataSource: files,
+                                       template: "<img src='#: data #'>"
+                                   });
+                               });
+                           }
+                       
+                    }
+                }
+            }
+
+        });
+                       
+    }
     scope.watchMode = {
         getTrips: getTrips,
-        showTrips: showTrips
+        showTrips: showTrips,
     }
 
 }(app.viewmodels));
