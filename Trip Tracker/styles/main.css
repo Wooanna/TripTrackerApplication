@@ -454,3 +454,7 @@ label {
     color: darkbrown;
     padding-left: 5px;
 }
+
+#tripImage {
+    width: 200px;
+}
