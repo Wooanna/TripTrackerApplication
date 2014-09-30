@@ -83,8 +83,8 @@ app.viewmodels = app.viewmodels || {};
                                
                             });
                             scope.driverMode.tripImage = picture.Filename;
-                            navigator.vibrate();
-                            alert('The trip image successfully added.');
+ navigator.notification.vibrate();
+                            alert('The trip image successfully added.');                           
                         };
                         var error = function () {
                             navigator.notification.alert("Unfortunately we could not add the image");
